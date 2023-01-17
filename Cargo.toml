@@ -3,6 +3,7 @@ name = "airline-macros"
 description = "Macros for Airline"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 authors = ["Jackson Zamorano"]
 homepage = "https://github.com/jacksonzamorano/airline-macros"
 
