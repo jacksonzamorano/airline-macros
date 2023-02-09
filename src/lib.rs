@@ -14,7 +14,7 @@ pub fn derive_to_json(item: TokenStream) -> TokenStream {
 
     let struct_fields_string = struct_string.split("{").collect::<Vec<&str>>()[1]
         .replace("}", "");
-    let struct_fields = struct_fields_string.split(",").collect::<Vec<&str>>().iter().map(|x| {
+    let struct_fields = struct_fields_string.split(",").filter(|x| !x.trim().is_empty()).collect::<Vec<&str>>().iter().map(|x| {
         let vals = x.split(":").collect::<Vec<&str>>();
         let field_details = vals[0].trim().split(" ").last().unwrap().to_string();
         let struct_type = vals[1].trim().to_string();
